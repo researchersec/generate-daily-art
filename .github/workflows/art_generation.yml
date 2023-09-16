@@ -1,10 +1,8 @@
 name: Generate Art
 
 on:
-  push:  # This will run the action every time you push to the repository
-    paths:
-    - 'generate_art.py'  # Only run if generate_art.py is changed
-
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC   
 jobs:
   generate:
     runs-on: ubuntu-latest

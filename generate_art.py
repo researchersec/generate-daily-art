@@ -1,6 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+import os
+from datetime import datetime
+
+# Generate folder name based on current date
+folder_name = datetime.now().strftime('%Y-%m-%d')
+if not os.path.exists(folder_name):
+    os.makedirs(folder_name)
 
 # Generate random data
 x = np.random.randn(1000)
@@ -19,4 +26,7 @@ elif plot_type == 'plot':
     plt.plot(x, y, '-o', markersize=2, color=random.choice(['r', 'g', 'b', 'y', 'm', 'c']))
 elif plot_type == 'hist':
     plt.hist(x, bins=50, color=random.choice(['r', 'g', 'b', 'y', 'm', 'c']), alpha=0.7)
-plt.savefig('art.png')
+
+# Save the plot to an image file inside the date-named folder
+output_path = os.path.join(folder_name, 'art.png')
+plt.savefig(output_path)

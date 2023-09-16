@@ -30,6 +30,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add art.png
-        git commit -m "Add new artwork" || echo "No changes to commit"
+        git add -A  # This will add all new folders and files
+        git commit -m "Add new artwork for $(date +'%Y-%m-%d')" || echo "No changes to commit"
         git push
+

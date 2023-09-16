@@ -19,6 +19,4 @@ elif plot_type == 'plot':
     plt.plot(x, y, '-o', markersize=2, color=random.choice(['r', 'g', 'b', 'y', 'm', 'c']))
 elif plot_type == 'hist':
     plt.hist(x, bins=50, color=random.choice(['r', 'g', 'b', 'y', 'm', 'c']), alpha=0.7)
-
-# Save the plot to an image file
 plt.savefig('art.png')
